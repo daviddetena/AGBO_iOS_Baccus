@@ -12,6 +12,7 @@
 		590170851B47051D0065086F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 590170841B47051D0065086F /* Images.xcassets */; };
 		590170881B47051D0065086F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590170861B47051D0065086F /* LaunchScreen.xib */; };
 		590170941B47051D0065086F /* BaccusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 590170931B47051D0065086F /* BaccusTests.m */; };
+		5901709F1B4705DB0065086F /* DTCWineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5901709E1B4705DB0065086F /* DTCWineModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 		5901708D1B47051D0065086F /* BaccusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaccusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		590170921B47051D0065086F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		590170931B47051D0065086F /* BaccusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaccusTests.m; sourceTree = "<group>"; };
+		5901709D1B4705DB0065086F /* DTCWineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCWineModel.h; sourceTree = "<group>"; };
+		5901709E1B4705DB0065086F /* DTCWineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCWineModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,7 @@
 		5901707C1B47051D0065086F /* Baccus */ = {
 			isa = PBXGroup;
 			children = (
+				590170A01B4705E20065086F /* Models */,
 				590170811B47051D0065086F /* AppDelegate.h */,
 				590170821B47051D0065086F /* AppDelegate.m */,
 				590170841B47051D0065086F /* Images.xcassets */,
@@ -109,6 +113,15 @@
 				590170921B47051D0065086F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		590170A01B4705E20065086F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5901709D1B4705DB0065086F /* DTCWineModel.h */,
+				5901709E1B4705DB0065086F /* DTCWineModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				590170831B47051D0065086F /* AppDelegate.m in Sources */,
+				5901709F1B4705DB0065086F /* DTCWineModel.m in Sources */,
 				590170801B47051D0065086F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
