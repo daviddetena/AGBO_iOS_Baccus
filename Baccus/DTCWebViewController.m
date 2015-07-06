@@ -15,6 +15,7 @@
 -(id) initWithModel:(DTCWineModel *) aModel{
     if(self = [super initWithNibName:nil bundle:nil]){
         _model = aModel;
+        self.title = @"Web";
     }
     return self;
 }

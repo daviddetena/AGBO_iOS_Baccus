@@ -32,12 +32,16 @@
                                                  rating:5
                                                   photo:[UIImage imageNamed:@"bembibre.jpg"]];
     
-    // Create controller
-    //DTCWineViewController *wineVC = [[DTCWineViewController alloc] initWithModel:tintorro];
+    // Create controller(s)
+    DTCWineViewController *wineVC = [[DTCWineViewController alloc] initWithModel:tintorro];
     DTCWebViewController *webVC = [[DTCWebViewController alloc] initWithModel:tintorro];
     
+    // Combiner TabBar
+    UITabBarController *tabVC = [[UITabBarController alloc] init];
+    tabVC.viewControllers = @[wineVC,webVC];
+    
     // Set as root view controller
-    self.window.rootViewController = webVC;
+    self.window.rootViewController = tabVC;
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
