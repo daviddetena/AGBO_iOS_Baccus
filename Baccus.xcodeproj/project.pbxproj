@@ -13,6 +13,12 @@
 		590170881B47051D0065086F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590170861B47051D0065086F /* LaunchScreen.xib */; };
 		590170941B47051D0065086F /* BaccusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 590170931B47051D0065086F /* BaccusTests.m */; };
 		5901709F1B4705DB0065086F /* DTCWineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5901709E1B4705DB0065086F /* DTCWineModel.m */; };
+		596D09DE1B4AAD4A00FEAEE6 /* DTCWineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596D09DC1B4AAD4A00FEAEE6 /* DTCWineViewController.m */; };
+		596D09DF1B4AAD4A00FEAEE6 /* DTCWineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 596D09DD1B4AAD4A00FEAEE6 /* DTCWineViewController.xib */; };
+		596D09E21B4AC3C000FEAEE6 /* glass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 596D09E11B4AC3C000FEAEE6 /* glass@2x.png */; };
+		596D09E51B4AC4CB00FEAEE6 /* bembibre.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 596D09E41B4AC4CB00FEAEE6 /* bembibre.jpg */; };
+		596D09E91B4AC7C200FEAEE6 /* DTCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596D09E71B4AC7C200FEAEE6 /* DTCWebViewController.m */; };
+		596D09EA1B4AC7C200FEAEE6 /* DTCWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 596D09E81B4AC7C200FEAEE6 /* DTCWebViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +44,14 @@
 		590170931B47051D0065086F /* BaccusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaccusTests.m; sourceTree = "<group>"; };
 		5901709D1B4705DB0065086F /* DTCWineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCWineModel.h; sourceTree = "<group>"; };
 		5901709E1B4705DB0065086F /* DTCWineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCWineModel.m; sourceTree = "<group>"; };
+		596D09DB1B4AAD4A00FEAEE6 /* DTCWineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCWineViewController.h; sourceTree = "<group>"; };
+		596D09DC1B4AAD4A00FEAEE6 /* DTCWineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCWineViewController.m; sourceTree = "<group>"; };
+		596D09DD1B4AAD4A00FEAEE6 /* DTCWineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTCWineViewController.xib; sourceTree = "<group>"; };
+		596D09E11B4AC3C000FEAEE6 /* glass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glass@2x.png"; sourceTree = "<group>"; };
+		596D09E41B4AC4CB00FEAEE6 /* bembibre.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bembibre.jpg; sourceTree = "<group>"; };
+		596D09E61B4AC7C200FEAEE6 /* DTCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCWebViewController.h; sourceTree = "<group>"; };
+		596D09E71B4AC7C200FEAEE6 /* DTCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCWebViewController.m; sourceTree = "<group>"; };
+		596D09E81B4AC7C200FEAEE6 /* DTCWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTCWebViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +93,9 @@
 		5901707C1B47051D0065086F /* Baccus */ = {
 			isa = PBXGroup;
 			children = (
+				596D09E31B4AC3C400FEAEE6 /* Resources */,
 				590170A01B4705E20065086F /* Models */,
+				596D09E01B4AAD5100FEAEE6 /* Controllers */,
 				590170811B47051D0065086F /* AppDelegate.h */,
 				590170821B47051D0065086F /* AppDelegate.m */,
 				590170841B47051D0065086F /* Images.xcassets */,
@@ -122,6 +138,28 @@
 				5901709E1B4705DB0065086F /* DTCWineModel.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		596D09E01B4AAD5100FEAEE6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				596D09DB1B4AAD4A00FEAEE6 /* DTCWineViewController.h */,
+				596D09DC1B4AAD4A00FEAEE6 /* DTCWineViewController.m */,
+				596D09DD1B4AAD4A00FEAEE6 /* DTCWineViewController.xib */,
+				596D09E61B4AC7C200FEAEE6 /* DTCWebViewController.h */,
+				596D09E71B4AC7C200FEAEE6 /* DTCWebViewController.m */,
+				596D09E81B4AC7C200FEAEE6 /* DTCWebViewController.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		596D09E31B4AC3C400FEAEE6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				596D09E41B4AC4CB00FEAEE6 /* bembibre.jpg */,
+				596D09E11B4AC3C000FEAEE6 /* glass@2x.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,8 +242,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				596D09E21B4AC3C000FEAEE6 /* glass@2x.png in Resources */,
 				590170881B47051D0065086F /* LaunchScreen.xib in Resources */,
 				590170851B47051D0065086F /* Images.xcassets in Resources */,
+				596D09EA1B4AC7C200FEAEE6 /* DTCWebViewController.xib in Resources */,
+				596D09E51B4AC4CB00FEAEE6 /* bembibre.jpg in Resources */,
+				596D09DF1B4AAD4A00FEAEE6 /* DTCWineViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +268,8 @@
 				590170831B47051D0065086F /* AppDelegate.m in Sources */,
 				5901709F1B4705DB0065086F /* DTCWineModel.m in Sources */,
 				590170801B47051D0065086F /* main.m in Sources */,
+				596D09DE1B4AAD4A00FEAEE6 /* DTCWineViewController.m in Sources */,
+				596D09E91B4AC7C200FEAEE6 /* DTCWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +458,7 @@
 				590170991B47051D0065086F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5901709A1B47051D0065086F /* Build configuration list for PBXNativeTarget "BaccusTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +467,7 @@
 				5901709C1B47051D0065086F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

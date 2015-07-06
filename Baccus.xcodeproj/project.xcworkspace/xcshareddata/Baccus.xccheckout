@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>30E18D2C-3C03-4B3A-AE99-EA34F4082C38</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Baccus</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>75AE3BD559E4D0172B29883C8C59A042C75A6C82</key>
+		<string>https://github.com/daviddetena/AGBO_iOS_Baccus.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Baccus.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>75AE3BD559E4D0172B29883C8C59A042C75A6C82</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/daviddetena/AGBO_iOS_Baccus.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>75AE3BD559E4D0172B29883C8C59A042C75A6C82</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>75AE3BD559E4D0172B29883C8C59A042C75A6C82</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Baccus</string>
+		</dict>
+	</array>
+</dict>
+</plist>
