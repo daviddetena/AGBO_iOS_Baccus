@@ -32,12 +32,42 @@
                                                  rating:5
                                                   photo:[UIImage imageNamed:@"bembibre.jpg"]];
     
-    // Create controller
-    //DTCWineViewController *wineVC = [[DTCWineViewController alloc] initWithModel:tintorro];
-    DTCWebViewController *webVC = [[DTCWebViewController alloc] initWithModel:tintorro];
+    DTCWineModel *albarinno = [DTCWineModel wineWithName:@"Zárate"
+                                         wineCompanyName:@"Zárate"
+                                                    type:@"white"
+                                                  origin:@"Rias Bajas"
+                                                  grapes:@[@"Albariño"]
+                                          wineCompanyWeb:[NSURL URLWithString:@"http://bodegas-zarate.com/productos/vinos/albarino-zarate/"]
+                                                   notes:@"El albariño Zarate es un vino blanco monovarietal que pertenece a la Denominación de Origen Rías Baixas. Considerado por la crítica especializada como uno de los grandes vinos blancos del mundo, el albariño ya es todo un mito."
+                                                  rating:4
+                                                   photo:[UIImage imageNamed:@"zarate.gif"]];
     
-    // Set as root view controller
-    self.window.rootViewController = webVC;
+    DTCWineModel *champagne = [DTCWineModel wineWithName:@"Comtes de Champagne"
+                                         wineCompanyName:@"Champagne Taittinger"
+                                                    type:@"other"
+                                                  origin:@"Champagne"
+                                                  grapes:@[@"Chardonnay"]
+                                          wineCompanyWeb:[NSURL URLWithString:@"http://www.taittinger.fr"]
+                                                   notes:@"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac nunc purus. Curabitur eu velit mauris. Curabitur magna nisi, ullamcorper ac bibendum ac, laoreet et justo. Praesent vitae tortor quis diam luctus condimentum. Suspendisse potenti. In magna elit, interdum sit amet facilisis dictum, bibendum nec libero. Maecenas pellentesque posuere vehicula. Vivamus eget nisl urna, quis egestas sem. Vivamus at venenatis quam. Sed eu nulla a orci fringilla pulvinar ut eu diam. Morbi nibh nibh, bibendum at laoreet egestas, scelerisque et nisi. Donec ligula quam, semper nec bibendum in, semper eget dolor. In hac habitasse platea dictumst. Maecenas adipiscing semper rutrum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;"
+                                                  rating:5
+                                                   photo:[UIImage imageNamed:@"comtesDeChampagne.jpg"]];
+    
+    // Create controller(s)
+    DTCWineViewController *tintoVC = [[DTCWineViewController alloc] initWithModel:tintorro];
+    DTCWineViewController *albarinoVC = [[DTCWineViewController alloc] initWithModel:albarinno];
+    DTCWineViewController *champagneVC = [[DTCWineViewController alloc] initWithModel:champagne];
+    
+    // UINavigation(s)
+    UINavigationController *navTintoVC = [[UINavigationController alloc] initWithRootViewController:tintoVC];
+    UINavigationController *navAlbarinoVC = [[UINavigationController alloc] initWithRootViewController:albarinoVC];
+    UINavigationController *navChampagneVC = [[UINavigationController alloc] initWithRootViewController:champagneVC];
+    
+    // Tabbar
+    UITabBarController *tabBar = [[UITabBarController alloc] init];
+    tabBar.viewControllers = @[navTintoVC,navAlbarinoVC,navChampagneVC];
+    
+    // Set tabbar as root view controller
+    self.window.rootViewController = tabBar;
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];

@@ -19,6 +19,8 @@
 		596D09E51B4AC4CB00FEAEE6 /* bembibre.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 596D09E41B4AC4CB00FEAEE6 /* bembibre.jpg */; };
 		596D09E91B4AC7C200FEAEE6 /* DTCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596D09E71B4AC7C200FEAEE6 /* DTCWebViewController.m */; };
 		596D09EA1B4AC7C200FEAEE6 /* DTCWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 596D09E81B4AC7C200FEAEE6 /* DTCWebViewController.xib */; };
+		599B3DAF1B4AE2CF00EAD281 /* comtesDeChampagne.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 599B3DAD1B4AE2CF00EAD281 /* comtesDeChampagne.jpg */; };
+		599B3DB01B4AE2CF00EAD281 /* zarate.gif in Resources */ = {isa = PBXBuildFile; fileRef = 599B3DAE1B4AE2CF00EAD281 /* zarate.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		596D09E61B4AC7C200FEAEE6 /* DTCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCWebViewController.h; sourceTree = "<group>"; };
 		596D09E71B4AC7C200FEAEE6 /* DTCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCWebViewController.m; sourceTree = "<group>"; };
 		596D09E81B4AC7C200FEAEE6 /* DTCWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTCWebViewController.xib; sourceTree = "<group>"; };
+		599B3DAD1B4AE2CF00EAD281 /* comtesDeChampagne.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = comtesDeChampagne.jpg; sourceTree = "<group>"; };
+		599B3DAE1B4AE2CF00EAD281 /* zarate.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = zarate.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 		596D09E31B4AC3C400FEAEE6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				599B3DAD1B4AE2CF00EAD281 /* comtesDeChampagne.jpg */,
+				599B3DAE1B4AE2CF00EAD281 /* zarate.gif */,
 				596D09E41B4AC4CB00FEAEE6 /* bembibre.jpg */,
 				596D09E11B4AC3C000FEAEE6 /* glass@2x.png */,
 			);
@@ -243,9 +249,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				596D09E21B4AC3C000FEAEE6 /* glass@2x.png in Resources */,
+				599B3DAF1B4AE2CF00EAD281 /* comtesDeChampagne.jpg in Resources */,
 				590170881B47051D0065086F /* LaunchScreen.xib in Resources */,
 				590170851B47051D0065086F /* Images.xcassets in Resources */,
 				596D09EA1B4AC7C200FEAEE6 /* DTCWebViewController.xib in Resources */,
+				599B3DB01B4AE2CF00EAD281 /* zarate.gif in Resources */,
 				596D09E51B4AC4CB00FEAEE6 /* bembibre.jpg in Resources */,
 				596D09DF1B4AAD4A00FEAEE6 /* DTCWineViewController.xib in Resources */,
 			);

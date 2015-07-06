@@ -8,6 +8,7 @@
 
 #import "DTCWineViewController.h"
 #import "DTCWineModel.h"
+#import "DTCWebViewController.h"
 
 @implementation DTCWineViewController
 
@@ -16,6 +17,7 @@
 -(id) initWithModel: (DTCWineModel *) aModel{
     if (self = [super initWithNibName:nil bundle:nil]) {
         _model = aModel;
+        self.title = aModel.name;
     }
     return self;
 }
@@ -25,7 +27,19 @@
 // Sync model and view
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    // Make the VC appears below the status bar
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     [self syncModelWithView];
+    
+    // Violet-based color for bartint
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.5
+                                                                           green:0
+                                                                            blue:0.13
+                                                                           alpha:1];
+    // White color for links in navigation
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithWhite:1.0
+                                                                          alpha:1];
 }
 
 
@@ -48,6 +62,8 @@
     // Rating
     [self displayRating: self.model.rating];
     
+    
+    // Notes with as much lines as needed
     [self.notesLabel setNumberOfLines:0];
     
 }
@@ -64,7 +80,7 @@
     return repr;
 }
 
-
+// Display as many glasses as rating
 -(void) displayRating:(int) aRating{
     // Clear rating, load image and display
     [self clearRating];
@@ -74,7 +90,7 @@
     }
 }
 
-
+// Clear rating
 -(void) clearRating{
     for (UIImageView *imgView in self.ratingViews) {
         imgView.image = nil;
@@ -85,7 +101,10 @@
 
 #pragma mark - Actions
 -(IBAction)displayWeb:(id)sender{
-    NSLog(@"Go to %@", self.model.wineCompanyWeb);
+    
+    // Create WebVC and push it
+    DTCWebViewController *webVC = [[DTCWebViewController alloc]initWithModel:self.model];
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 
