@@ -9,7 +9,7 @@
 @import UIKit;
 @class DTCWineModel;
 
-@interface DTCWineViewController : UIViewController
+@interface DTCWineViewController : UIViewController<UISplitViewControllerDelegate>
 
 #pragma mark - Properties
 // Model

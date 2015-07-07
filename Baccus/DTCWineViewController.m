@@ -34,6 +34,9 @@
     
     [self syncModelWithView];
     
+    // Set left (or right) button item that shows or hides the table in split mode (iPad)
+    self.navigationItem.rightBarButtonItem = self.splitViewController.displayModeButtonItem;
+    
     // Violet-based color for bartint
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.5
                                                                            green:0
@@ -103,6 +106,20 @@
     [self.navigationController pushViewController:webVC animated:YES];
 }
 
+
+
+#pragma mark - UISplitViewControllerDelegate
+- (void) splitViewController:(UISplitViewController *)svc willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode{
+    // Check out if the table is visible
+    if (displayMode==UISplitViewControllerDisplayModePrimaryHidden) {
+        // Table hidden => show button on the navigation
+        self.navigationItem.rightBarButtonItem = svc.displayModeButtonItem;
+    }
+    else{
+        // Table visible => Hide split button
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+}
 
 
 @end

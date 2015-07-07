@@ -28,16 +28,26 @@
     // Create model
     DTCWineryModel *winery = [[DTCWineryModel alloc] init];
     
-    // Create custom controller for winery
+    // Create custom controllers for winery and wine
     DTCWineryTableViewController *wineryVC = [[DTCWineryTableViewController alloc] initWithModel:winery
                                                                                            style:UITableViewStylePlain];
+    // First wine of red wines is the first to be displayed
+    DTCWineViewController *wineVC = [[DTCWineViewController alloc] initWithModel:[winery redWineAtIndex:0]];
     
+    // Embed controllers into NavigationControllers
+    UINavigationController *wineryNav = [[UINavigationController alloc] initWithRootViewController:wineryVC];
+    UINavigationController *wineNav = [[UINavigationController alloc] initWithRootViewController:wineVC];
     
-    // Embed table into NavigationController
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:wineryVC];
+    // UISplitVC
+    UISplitViewController *splitVC = [[UISplitViewController alloc] init];
+    splitVC.viewControllers = @[wineryNav,wineNav];
+    
+    // WineVC is the delegate of the splitVC
+    splitVC.delegate = wineVC;
+    
     
     // Set navigation as root view controller
-    self.window.rootViewController = nav;
+    self.window.rootViewController = splitVC;
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
