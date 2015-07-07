@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "DTCWineModel.h"
 #import "DTCWineViewController.h"
+#import "DTCWineryModel.h"
+#import "DTCWineryTableViewController.h"
 #import "DTCWebViewController.h"
 
 @interface AppDelegate ()
@@ -21,23 +23,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+//    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     // Create model
-    DTCWineModel *tintorro = [DTCWineModel wineWithName:@"Bembibre"
-                                        wineCompanyName:@"Dominio de Tares"
-                                                   type:@"tinto"
-                                                 origin:@"El Bierzo"
-                                                 grapes:@[@"Mencía"]
-                                         wineCompanyWeb:[NSURL URLWithString:@"http://www.dominiodetares.com/index.php/es/vinos/baltos/74-bembibrevinos"]
-                                                  notes:@"Este vino muestra toda la complejidad y la elegancia de la variedad Mencía. En fase visual luce un color rojo picota muy cubierto con tonalidades violáceas en el menisco. En nariz aparecen recuerdos frutales muy intensos de frutas rojas (frambuesa, cereza) y una potente ciruela negra, así como tonos florales de la gama de las rosas y violetas, vegetales muy elegantes y complementarios, hojarasca verde, tabaco y maderas aromáticas (sándalo) que le brindan un toque ciertamente perfumado."
-                                                 rating:5
-                                                  photo:[UIImage imageNamed:@"bembibre.jpg"]];
+    DTCWineryModel *winery = [[DTCWineryModel alloc] init];
     
-    // Create controller
-    //DTCWineViewController *wineVC = [[DTCWineViewController alloc] initWithModel:tintorro];
-    DTCWebViewController *webVC = [[DTCWebViewController alloc] initWithModel:tintorro];
+    // Create custom controller for winery
+    DTCWineryTableViewController *wineryVC = [[DTCWineryTableViewController alloc] initWithModel:winery
+                                                                                           style:UITableViewStylePlain];
     
-    // Set as root view controller
-    self.window.rootViewController = webVC;
+    
+    // Embed table into NavigationController
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:wineryVC];
+    
+    // Set navigation as root view controller
+    self.window.rootViewController = nav;
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
