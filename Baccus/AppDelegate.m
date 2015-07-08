@@ -31,8 +31,8 @@
     // Create custom controllers for winery and wine
     DTCWineryTableViewController *wineryVC = [[DTCWineryTableViewController alloc] initWithModel:winery
                                                                                            style:UITableViewStylePlain];
-    // First wine of red wines is the first to be displayed
-    DTCWineViewController *wineVC = [[DTCWineViewController alloc] initWithModel:[winery redWineAtIndex:0]];
+    // Wine saved in NSUserDefaults is the wine to be displayed when the app is launched
+    DTCWineViewController *wineVC = [[DTCWineViewController alloc] initWithModel:[wineryVC lastSelectedWine]];
     
     // Embed controllers into NavigationControllers
     UINavigationController *wineryNav = [[UINavigationController alloc] initWithRootViewController:wineryVC];

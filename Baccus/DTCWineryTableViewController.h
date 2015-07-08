@@ -13,6 +13,10 @@
 #define NEW_WINE_NOTIFICATION_NAME @"newWine"
 #define WINE_KEY @"wineKey"
 
+#define SECTION_KEY @"lastWineSection"
+#define ROW_KEY @"lastWineRow"
+#define LAST_WINE_KEY @"lastWine"
+
 @import UIKit;
 @class DTCWineModel;
 @class DTCWineryModel;
@@ -46,6 +50,7 @@
               style: (UITableViewStyle) aStyle;
 
 
-#pragma mark - Actions
+// Last selected wine
+-(DTCWineModel *) lastSelectedWine;
 
 @end

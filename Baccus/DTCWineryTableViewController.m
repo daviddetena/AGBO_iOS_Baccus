@@ -125,6 +125,9 @@
                                                                userInfo:@{WINE_KEY:wine}];
     
     [[NSNotificationCenter defaultCenter] postNotification:notification];
+    
+    // Save coords of the selected wine in NSUserDefaults
+    [self saveLastSelectedWineAtSection:indexPath.section row:indexPath.row];
 }
 
 
@@ -142,6 +145,72 @@
         model = [self.model otherWineAtIndex:indexPath.row];
     }
     return model;
+}
+
+// Set default wine to display
+- (NSDictionary *) setDefaults{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    // First of red wine will be the default wine to display
+    NSDictionary *defaultWineCoords = @{SECTION_KEY : @(RED_WINE_SECTION),
+                                        ROW_KEY : @0};
+    
+    // Save these coords into NSUserDefaults
+    [defaults setObject:defaultWineCoords
+                 forKey:LAST_WINE_KEY];
+    
+    [defaults synchronize];
+    
+    [self displayNSUserDefaultsFolder];
+    
+    return defaultWineCoords;
+}
+
+
+#pragma mark - NSUserDefaults
+
+- (void) displayNSUserDefaultsFolder{
+    NSArray *path = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *folder = [path objectAtIndex:0];
+    NSLog(@"Your NSUserDefaults are stored in this folder: %@/Preferences", folder);
+}
+
+- (void) saveLastSelectedWineAtSection:(NSUInteger) section row:(NSUInteger) row{
+    // Save coords in NSUserDefaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    [defaults setObject:@{
+                          SECTION_KEY:@(section),
+                          ROW_KEY:@(row)}
+                 forKey:LAST_WINE_KEY];
+    
+    // Force to save
+    [defaults synchronize];
+    
+    [self displayNSUserDefaultsFolder];
+}
+
+
+- (DTCWineModel *) lastSelectedWine{
+    // Get data from NSUserDefault
+    NSIndexPath *indexPath = nil;
+    NSDictionary *coords = nil;
+    
+    coords = [[NSUserDefaults standardUserDefaults] objectForKey:LAST_WINE_KEY];
+    if (coords == nil) {
+        // No wine saved in NSUserDefaults, get the first of red wines
+        coords = [self setDefaults];
+    }
+    
+    // Turn the coords into an indexPath
+    indexPath = [NSIndexPath indexPathForRow:[[coords objectForKey:ROW_KEY] integerValue]
+                                   inSection:[[coords objectForKey:SECTION_KEY] integerValue]];
+    
+    [self displayNSUserDefaultsFolder];
+    
+    DTCWineModel *wine = [self wineAtIndexPath:indexPath];
+    return wine;
 }
 
 
