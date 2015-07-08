@@ -118,6 +118,13 @@
     
     [self.delegate wineryTableViewController:self
                                didSelectWine:wine];
+    
+    // Create and send a notification to note that the user did tap a new wine
+    NSNotification *notification = [NSNotification notificationWithName:NEW_WINE_NOTIFICATION_NAME
+                                                                 object:self
+                                                               userInfo:@{WINE_KEY:wine}];
+    
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
 }
 
 

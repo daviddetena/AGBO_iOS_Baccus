@@ -45,9 +45,25 @@
     // White color for links in navigation
     self.navigationController.navigationBar.tintColor = [UIColor colorWithWhite:1.0
                                                                           alpha:1];
+    
+    // Suscribe to notifications from table
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self
+               selector:@selector(wineDidChange:)
+                   name:NEW_WINE_NOTIFICATION_NAME
+                 object:nil];
 }
 
 
+-(void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    // Unsuscribe from notifications
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
+#pragma mark - Memory
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -130,6 +146,18 @@
     
     self.model = aWine;
     self.title = aWine.name;
+    [self syncModelWithView];
+}
+
+
+#pragma mark - Notifications
+// Catch the new wine from extraInfo in the notification
+-(void) wineDidChange: (NSNotification *) notification{
+    DTCWineModel *newWine = [notification.userInfo objectForKey:WINE_KEY];
+    
+    // Update model
+    self.model = newWine;
+    self.title = newWine.name;
     [self syncModelWithView];
 }
 

@@ -10,6 +10,9 @@
 #define WHITE_WINE_SECTION 1
 #define OTHER_WINE_SECTION 2
 
+#define NEW_WINE_NOTIFICATION_NAME @"newWine"
+#define WINE_KEY @"wineKey"
+
 @import UIKit;
 @class DTCWineModel;
 @class DTCWineryModel;
