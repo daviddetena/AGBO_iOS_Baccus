@@ -42,8 +42,10 @@
     UISplitViewController *splitVC = [[UISplitViewController alloc] init];
     splitVC.viewControllers = @[wineryNav,wineNav];
     
-    // WineVC is the delegate of the splitVC
+    // Set delegates
+    // WineVC is the delegate for both the splitVC and the TableVC
     splitVC.delegate = wineVC;
+    wineryVC.delegate = wineVC;
     
     
     // Set navigation as root view controller

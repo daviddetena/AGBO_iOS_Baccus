@@ -112,12 +112,12 @@
 
 
 #pragma mark - Table view delegate
-// Present selected wine by pushing VC
+// Pass a message to the Table's delegate to let it know that a new wine has been selected
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     DTCWineModel *wine = [self wineAtIndexPath:indexPath];
-    DTCWineViewController *wineVC = [[DTCWineViewController alloc] initWithModel:wine];
     
-    [self.navigationController pushViewController:wineVC animated:YES];
+    [self.delegate wineryTableViewController:self
+                               didSelectWine:wine];
 }
 
 

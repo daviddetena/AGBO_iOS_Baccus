@@ -109,6 +109,7 @@
 
 
 #pragma mark - UISplitViewControllerDelegate
+// The iPad changes its orientation
 - (void) splitViewController:(UISplitViewController *)svc willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode{
     // Check out if the table is visible
     if (displayMode==UISplitViewControllerDisplayModePrimaryHidden) {
@@ -119,6 +120,17 @@
         // Table visible => Hide split button
         self.navigationItem.rightBarButtonItem = nil;
     }
+}
+
+
+#pragma mark - WineryTableViewControllerDelegate
+// The user did tap a new wine => the model has changed
+- (void) wineryTableViewController:(DTCWineryTableViewController *)wineryVC
+                     didSelectWine:(DTCWineModel *)aWine{
+    
+    self.model = aWine;
+    self.title = aWine.name;
+    [self syncModelWithView];
 }
 
 

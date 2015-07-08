@@ -8,8 +8,9 @@
 
 @import UIKit;
 @class DTCWineModel;
+#import "DTCWineryTableViewController.h"
 
-@interface DTCWineViewController : UIViewController<UISplitViewControllerDelegate>
+@interface DTCWineViewController : UIViewController<UISplitViewControllerDelegate, WineryTableViewControllerDelegate>
 
 #pragma mark - Properties
 // Model

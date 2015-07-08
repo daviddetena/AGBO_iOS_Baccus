@@ -11,12 +11,30 @@
 #define OTHER_WINE_SECTION 2
 
 @import UIKit;
+@class DTCWineModel;
 @class DTCWineryModel;
+@class DTCWineryTableViewController;
+
+
+#pragma mark - WineryTableViewControllerDelegate
+@protocol WineryTableViewControllerDelegate <NSObject>
+
+// Messages that the delegate of this class will implement
+- (void) wineryTableViewController: (DTCWineryTableViewController *) wineryVC didSelectWine: (DTCWineModel *) aWine;
+
+@end
+
+
 
 @interface DTCWineryTableViewController : UITableViewController
 
 #pragma mark - Properties
+
+// Model
 @property (strong,nonatomic) DTCWineryModel *model;
+
+// Delegate for the protocol
+@property (weak,nonatomic) id<WineryTableViewControllerDelegate> delegate;
 
 
 #pragma mark - Instance methods
